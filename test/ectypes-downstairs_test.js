@@ -40,6 +40,8 @@ var userTableSQL = "CREATE TABLE users\
   CONSTRAINT pk_users PRIMARY KEY (id)\
 );"
 
+var User = Table.model('User', userSQL);
+
 var blueprint =
   {User: { 
     email: function(){ return faker2.Internet.email()} 
@@ -52,22 +54,36 @@ var blueprint =
 ctx.add(blueprint);
 
 describe('downstairs ectypes', function(done){
+
   beforeEach(function(done){
     pg.connect(env.connectionString, function(err, client) {
-      var resetString = "drop schema public cascade; create schema public;" + userTableSql;
+      var resetString = "drop schema public cascade; create schema public;" + userTableSQL;
       client.query(resetString, function(err, result){
-        done()
-      });
-   });
-
-    it('should create an ectype User!', function(done){
-      ctx.User.create(function(err, user){
-        should.exist(user);
-        user.password.should.equal('5f4dcc3b5aa765d61d8327deb882cf99');
-        should.exist(user.email);
-        should.exist(user.username);
         done();
-      })
+      });
     });
   });
-})
+
+  it('should build an ectype User!', function(done){
+    ctx.User.build(function(err, user){
+      should.exist(user);
+      user.password.should.equal('5f4dcc3b5aa765d61d8327deb882cf99');
+      should.exist(user.email);
+      should.exist(user.username);
+      done();
+    })
+  });
+
+  it('should create an ectype User!', function(done){
+    ctx.User.create(function(err, user){
+      should.exist(user);
+      user.password.should.equal('5f4dcc3b5aa765d61d8327deb882cf99');
+      should.exist(user.email);
+      should.exist(user.username);
+      should.exist(user.id);
+      done();
+    })
+  });
+});
+
+
