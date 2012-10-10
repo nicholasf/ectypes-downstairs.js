@@ -7,7 +7,6 @@ Install the module with: `npm install ectypes-downstairs`
 
 ```javascript
 var ectypes_downstairs = require('ectypes-downstairs');
-ectypes_downstairs.awesome(); // "awesome"
 ```
 
 ## Documentation
