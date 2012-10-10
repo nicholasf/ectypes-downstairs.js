@@ -1,26 +1,27 @@
 # ectypes-downstairs
 
-An ectypes strategy for Downstairs
+An ectypes strategy for the Downstairs ORM. 
 
-## Getting Started
-Install the module with: `npm install ectypes-downstairs`
+For ectypes see https://github.com/nicholasf/ectypes.js .
+For Downstairs see https://github.com/moneytribeaustralia/downstairs.js
 
-```javascript
-var ectypes_downstairs = require('ectypes-downstairs');
-```
+
 
 ## Documentation
-_(Coming soon)_
+_(Coming soon)_ - see the tests for now.
 
 ## Examples
 _(Coming soon)_
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
 
 ## Release History
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Nicholas Faiz  
+Copyright (c) 2012 Moneytribe
+
+## Authors
+* Moneytribe dev (nicholasf, damienwhaley).
+
 Licensed under the MIT license.
