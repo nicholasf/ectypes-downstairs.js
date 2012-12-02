@@ -23,7 +23,6 @@ var userSQL = sql.Table.define({
         , 'username' 
         , 'created_at'
         , 'updated_at'
-        , 'is_active'
         , 'email'
         , 'password'
       ]
